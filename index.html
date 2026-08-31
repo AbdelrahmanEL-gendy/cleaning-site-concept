@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept Mockup — Rita Cleaning Service</title>
+<link rel="icon" href="img/rita-logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+:root{
+  --ink:#18220f;
+  --ink-2:#4a5742;
+  --ink-3:#7c8a72;
+  --green:#5fa82d;
+  --green-dark:#4a8522;
+  --green-deep:#1f3d12;
+  --green-deep-2:#2c5219;
+  --lime:#8cc63f;
+  --green-soft:#edf6e1;
+  --cream:#faf7f0;
+  --cream-2:#f1ede2;
+  --line:#e2e6db;
+  --amber:#e0a02c;
+  --font-ui:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-display:'Newsreader',Georgia,'Times New Roman',serif;
+  --radius:16px;
+  --shadow:0 2px 4px rgba(24,34,15,.04),0 14px 34px rgba(24,34,15,.08);
+  --shadow-sm:0 1px 2px rgba(24,34,15,.05),0 6px 16px rgba(24,34,15,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-ui);color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1160px,92%);margin:0 auto}
+h1,h2,.step h3,.card-body h3,.f-brand,.stat-num{font-family:var(--font-display);font-weight:600}
+h1{font-size:clamp(34px,4.7vw,56px);line-height:1.06;letter-spacing:-.014em;margin:0 0 18px}
+h2{font-size:clamp(28px,3.3vw,40px);line-height:1.14;letter-spacing:-.012em;margin:0 0 13px}
+i.ph,i[class^="ph-"],i[class*=" ph-"]{display:inline-block;line-height:1}
+
+/* reveal */
+.reveal{opacity:0;transform:translate3d(0,18px,0);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:translate3d(0,0,0)}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.no-io .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* concept bar */
+.concept{background:var(--green-deep);color:#d6ecc4;font-size:13px;padding:9px 0;text-align:center;font-weight:500}
+.concept strong{color:#fff;font-weight:800;letter-spacing:.06em}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:26px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo img{width:52px;height:auto}
+.logo b{font-family:var(--font-display);font-weight:600;font-size:19px;letter-spacing:-.01em;line-height:1.1;display:block}
+.logo span{display:block;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--green-dark)}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:600}
+.nav ul a{text-decoration:none;color:var(--ink-2)}
+.nav ul a:hover{color:var(--green-dark)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:16px}
+.phone{font-weight:800;font-size:15px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.phone i{color:var(--green);font-size:19px}
+.phone small{display:block;font-size:11px;font-weight:600;color:var(--ink-3);letter-spacing:.03em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;cursor:pointer;font-family:inherit;background:var(--green);color:#fff;font-weight:800;font-size:15px;padding:13px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:background .15s ease,transform .15s ease}
+.btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn-lg{padding:17px 32px;font-size:16.5px}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{background:var(--cream);border-color:var(--ink-3)}
+.btn-white{background:#fff;color:var(--green-deep)}
+.btn-white:hover{background:var(--green-soft)}
+.hide-sm{display:block}
+
+/* hero */
+.hero{background:linear-gradient(168deg,var(--green-soft) 0%,var(--cream) 55%,#fff 100%);padding:72px 0 64px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);color:var(--green-dark);font-size:13px;font-weight:800;padding:8px 15px;border-radius:100px;margin-bottom:22px}
+.eyebrow i{font-size:16px;color:var(--amber)}
+.lede{font-size:18px;color:var(--ink-2);margin:0 0 30px;max-width:31em}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{font-size:13.5px;color:var(--ink-3);margin-top:15px;display:flex;align-items:center;gap:7px}
+.hero-note i{color:var(--green);font-size:16px}
+.hero-chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 16px;font-size:13.5px;font-weight:700;color:var(--ink-2);display:flex;align-items:center;gap:8px}
+.chip i{color:var(--green);font-size:17px}
+.hero-media{position:relative}
+.hero-media img{width:100%;aspect-ratio:4/3.5;object-fit:cover;border-radius:22px;box-shadow:var(--shadow)}
+.hero-badge{position:absolute;left:-14px;bottom:26px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;max-width:255px}
+.hero-badge i{font-size:30px;color:var(--green)}
+.hero-badge b{display:block;font-size:15px;line-height:1.25}
+.hero-badge span{font-size:12.5px;color:var(--ink-3)}
+
+/* stats */
+.stats{padding:64px 0;background:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;background:var(--cream);position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;inset:auto -30px -40px auto;width:110px;height:110px;border-radius:100px;background:var(--green-soft);opacity:.7}
+.stat > *{position:relative}
+.stat i{font-size:26px;color:var(--green-dark);margin-bottom:12px;display:block}
+.stat-num{font-size:38px;line-height:1;letter-spacing:-.02em;margin:0 0 5px}
+.stat b{display:block;font-size:15px;font-weight:800;margin-bottom:3px}
+.stat > span{font-size:13.5px;color:var(--ink-3);line-height:1.45;display:block}
+.stat-num{display:flex;align-items:baseline;gap:3px}
+.stat-num .suf{font-size:24px;font-weight:600;line-height:1}
+.stats-note{font-size:13px;color:var(--ink-3);margin:20px 0 0;text-align:center}
+
+/* sections */
+section{padding:80px 0}
+.sec-head{max-width:660px;margin:0 0 44px}
+.sec-head.center{margin:0 auto 46px;text-align:center}
+.sec-head p{font-size:17px;color:var(--ink-2);margin:0}
+.kicker{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green-dark);margin:0 0 12px;display:flex;align-items:center;gap:8px}
+.center .kicker{justify-content:center}
+
+/* calculator */
+.quote{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.calc{display:grid;grid-template-columns:1.32fr .68fr;gap:26px;align-items:stretch}
+.calc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.steps{display:flex;gap:8px;margin-bottom:26px}
+.step-dot{flex:1;height:5px;border-radius:5px;background:var(--line);transition:background .25s}
+.step-dot.on{background:var(--green)}
+.step-label{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.step h3{font-size:23px;margin:0 0 24px;letter-spacing:-.008em}
+.step{flex:1;display:flex;flex-direction:column}
+.field{margin-bottom:22px}
+.field > label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;margin-bottom:10px}
+.field > label i{color:var(--green-dark);font-size:18px}
+.opts{display:flex;gap:9px;flex-wrap:wrap}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;width:0;height:0}
+.opt span{display:flex;align-items:center;gap:7px;border:1.5px solid var(--line);border-radius:11px;padding:11px 16px;font-size:14.5px;font-weight:700;cursor:pointer;background:#fff;transition:border-color .15s,background .15s,color .15s;color:var(--ink-2)}
+.opt span em{font-style:normal;font-size:12px;font-weight:800;color:var(--green-dark);background:var(--green-soft);padding:2px 7px;border-radius:100px}
+.opt input:checked + span{border-color:var(--green);background:var(--green-soft);color:var(--green-deep)}
+.opt input:focus-visible + span{outline:2px solid var(--green);outline-offset:2px}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.extra{position:relative}
+.extra input{position:absolute;opacity:0;width:0;height:0}
+.extra span{display:flex;align-items:center;gap:11px;border:1.5px solid var(--line);border-radius:11px;padding:14px 15px;font-size:14.5px;font-weight:700;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
+.extra span i{font-size:20px;color:var(--ink-3);transition:color .15s}
+.extra span em{font-style:normal;margin-left:auto;color:var(--ink-3);font-weight:800;font-size:13.5px}
+.extra input:checked + span{border-color:var(--green);background:var(--green-soft)}
+.extra input:checked + span i,.extra input:checked + span em{color:var(--green-dark)}
+.extra input:focus-visible + span{outline:2px solid var(--green);outline-offset:2px}
+.inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.inp{position:relative}
+.inp.full{grid-column:1/-1}
+.inp i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:19px;pointer-events:none}
+.inp input{width:100%;font-family:inherit;font-size:15px;padding:14px 15px 14px 43px;border:1.5px solid var(--line);border-radius:11px;background:#fff;color:var(--ink)}
+.inp input::placeholder{color:var(--ink-3)}
+.inp input:focus{outline:0;border-color:var(--green)}
+.inp input:focus + i{color:var(--green)}
+.nav-row{display:flex;gap:10px;margin-top:auto;padding-top:26px;align-items:center;flex-wrap:wrap}
+.hidden{display:none}
+
+.price-card{background:var(--green-deep);color:#fff;border-radius:var(--radius);padding:30px;display:flex;flex-direction:column}
+.price-card .kicker{color:var(--lime);margin-bottom:9px}
+.price{font-family:var(--font-display);font-size:52px;font-weight:600;letter-spacing:-.02em;line-height:1;margin:0 0 5px}
+.price-sub{font-size:13.5px;color:#a9c98f;margin:0 0 20px}
+.breakdown{list-style:none;margin:0;padding:18px 0;border-top:1px solid #3a6224;border-bottom:1px solid #3a6224;font-size:14px}
+.breakdown li{display:flex;justify-content:space-between;gap:12px;padding:5px 0;color:#d6ecc4}
+.breakdown li b{color:#fff;font-weight:700}
+.breakdown li.save b{color:var(--lime)}
+.incl{margin:20px 0 0;padding:0;list-style:none}
+.incl li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#d6ecc4;margin-bottom:10px;line-height:1.45}
+.incl i{color:var(--lime);font-size:18px;flex:0 0 auto;margin-top:1px}
+.guarantee{margin-top:auto;padding-top:22px;display:flex;gap:12px;align-items:center;border-top:1px solid #3a6224}
+.guarantee i{font-size:32px;color:var(--lime)}
+.guarantee b{display:block;font-size:14.5px}
+.guarantee span{font-size:12.5px;color:#a9c98f;line-height:1.4;display:block}
+.price-note{font-size:12px;color:#8fae76;margin:16px 0 0;line-height:1.5}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card figure{margin:0;aspect-ratio:16/10;overflow:hidden}
+.card figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover figure img{transform:scale(1.04)}
+.card-body{padding:26px;display:flex;flex-direction:column;flex:1}
+.card-body h3{margin:0 0 9px;font-size:21px}
+.card-body p{margin:0 0 18px;font-size:15px;color:var(--ink-2);flex:1}
+.from{font-size:13.5px;font-weight:800;color:var(--green-deep);background:var(--green-soft);display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:100px;align-self:flex-start}
+
+/* how */
+.how{background:var(--cream)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.how-step{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.how-icon{display:flex;align-items:center;gap:11px;margin-bottom:15px}
+.how-icon i{width:46px;height:46px;border-radius:100px;background:var(--green-soft);color:var(--green-dark);display:flex;align-items:center;justify-content:center;font-size:23px}
+.how-icon::after{content:"0" counter(s);font-family:var(--font-display);font-size:26px;color:var(--line);font-weight:600}
+.how-step h3{margin:0 0 7px;font-size:18px;font-family:var(--font-display);font-weight:600}
+.how-step p{margin:0;font-size:14.5px;color:var(--ink-2)}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff;display:flex;flex-direction:column}
+.stars{color:var(--amber);font-size:17px;margin-bottom:13px;display:flex;gap:2px}
+.review p{margin:0 0 20px;font-size:15.5px;color:var(--ink-2);line-height:1.6;flex:1}
+.who{display:flex;align-items:center;gap:12px}
+.av{width:40px;height:40px;border-radius:100px;background:var(--green-soft);color:var(--green-deep);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.who b{display:block;font-size:14.5px}
+.who span{font-size:13px;color:var(--ink-3);display:flex;align-items:center;gap:5px}
+.who span i{font-size:14px}
+
+/* areas */
+.areas{background:var(--green-deep);color:#fff}
+.areas .kicker{color:var(--lime)}
+.areas .sec-head p{color:#a9c98f}
+.suburbs{display:flex;flex-wrap:wrap;gap:9px}
+.suburbs a{border:1px solid #3a6224;border-radius:100px;padding:10px 18px;font-size:14px;font-weight:700;color:#d6ecc4;text-decoration:none;transition:background .15s,color .15s,border-color .15s}
+.suburbs a:hover{background:#fff;color:var(--green-deep);border-color:#fff}
+
+/* final */
+.final{background:linear-gradient(168deg,var(--green-soft) 0%,var(--cream) 100%);text-align:center}
+.final h2{max-width:15em;margin-left:auto;margin-right:auto}
+.final p{max-width:35em;margin:0 auto 28px;color:var(--ink-2);font-size:17px}
+.final .hero-cta{justify-content:center}
+
+/* footer */
+footer{background:#132708;color:#93ac7f;padding:54px 0 34px;font-size:14.5px}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:32px;margin-bottom:34px}
+footer h4{color:#fff;font-size:14px;margin:0 0 15px;letter-spacing:.04em}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:9px;display:flex;align-items:center;gap:9px}
+footer li i{color:var(--lime);font-size:17px}
+footer a{text-decoration:none;color:#93ac7f}
+footer a:hover{color:#fff}
+.f-logo{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.f-logo img{width:54px}
+.f-brand{color:#fff;font-size:19px}
+.f-mail{color:#fff;font-weight:700}
+.f-bot{border-top:1px solid #244014;padding-top:22px;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---- responsive (must stay last) ---- */
+@media(max-width:1000px){
+  .hero-grid,.calc{grid-template-columns:1fr}
+  .stats-grid,.cards,.steps-grid,.reviews{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .nav ul{display:none}
+  .hero-media img{aspect-ratio:16/10}
+  .hero-badge{left:16px}
+}
+@media(max-width:640px){
+  section,.stats{padding:56px 0}
+  .hero{padding:44px 0 48px}
+  .stats-grid,.cards,.steps-grid,.reviews,.f-grid,.extras,.inputs{grid-template-columns:1fr}
+  .hide-sm{display:none}
+  .calc-card,.price-card{padding:22px}
+  .nav{gap:12px;padding:10px 0}
+  .logo img{width:44px}
+  .logo b{font-size:17px}
+  .btn{padding:12px 20px;font-size:14.5px}
+  .btn-lg{padding:15px 26px;font-size:15.5px}
+  .hero-cta .btn{flex:1 1 100%}
+  .hero-badge{position:static;margin-top:14px;max-width:none}
+  .price{font-size:44px}
+  .stat-num{font-size:34px}
+  .nav-row .btn{flex:1}
+}
+</style>
+</head>
+<body>
+
+<div class="concept"><strong>CONCEPT MOCKUP</strong> &nbsp;·&nbsp; Prepared for Rita Cleaning Service by WebGendy. Not a live site. Prices, figures and reviews shown are indicative placeholders.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">
+      <img src="img/rita-logo.webp" alt="Rita Cleaning Service">
+      <span style="display:block"><b>Rita Cleaning</b><span>Perth · Since 2007</span></span>
+    </a>
+    <ul class="hide-sm">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#areas">Areas</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="phone hide-sm" href="tel:0433145346"><i class="ph-fill ph-phone-call"></i><span>0433 145 346<small>Mon–Sat, 7am–6pm</small></span></a>
+      <a class="btn" href="#quote"><i class="ph-bold ph-calculator"></i>Get my price</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow reveal"><i class="ph-fill ph-star"></i>Trusted across Perth's northern suburbs since 2007</div>
+      <h1 class="reveal d1">A cleaner you can trust with your key.</h1>
+      <p class="lede reveal d1">Police-checked, fully insured cleaners who learn your home and how you like things done. Answer three quick questions and your price appears on screen, so you can book without waiting on a quote.</p>
+      <div class="hero-cta reveal d2">
+        <a class="btn btn-lg" href="#quote"><i class="ph-bold ph-calculator"></i>Get my price</a>
+        <a class="btn btn-lg btn-ghost" href="tel:0433145346"><i class="ph-bold ph-phone"></i>0433 145 346</a>
+      </div>
+      <p class="hero-note reveal d2"><i class="ph-fill ph-clock"></i>About 45 seconds, and nothing is committed until you say so.</p>
+      <div class="hero-chips reveal d3">
+        <div class="chip"><i class="ph-fill ph-shield-check"></i>Police checked</div>
+        <div class="chip"><i class="ph-fill ph-seal-check"></i>Insured &amp; bonded</div>
+        <div class="chip"><i class="ph-fill ph-hand-heart"></i>100% guarantee</div>
+      </div>
+    </div>
+    <div class="hero-media reveal d2">
+      <img src="img/hero.jpg" alt="A Rita Cleaning Service cleaner arriving with supplies" width="1000" height="667">
+      <div class="hero-badge">
+        <i class="ph-fill ph-users-three"></i>
+        <div><b>The same cleaner, every visit</b><span>So nobody has to be re-taught your home</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><i class="ph-fill ph-calendar-check"></i><p class="stat-num">18<span class="suf">yrs</span></p><b>Serving Perth since 2007</b><span>Same family business, same standards</span></div>
+      <div class="stat reveal d1"><i class="ph-fill ph-house-line"></i><p class="stat-num">1,200<span class="suf">+</span></p><b>Homes cleaned</b><span>Across Hillarys, Joondalup and the northern coast</span></div>
+      <div class="stat reveal d2"><i class="ph-fill ph-star"></i><p class="stat-num">4.9<span class="suf">★</span></p><b>Average review score</b><span>From verified Google reviews</span></div>
+      <div class="stat reveal d3"><i class="ph-fill ph-shield-check"></i><p class="stat-num">100<span class="suf">%</span></p><b>Police checked &amp; insured</b><span>Every cleaner, verified before their first job</span></div>
+    </div>
+    <p class="stats-note">Figures above are placeholders for the mockup. Replace with your real numbers before launch.</p>
+  </div>
+</div>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="kicker"><i class="ph-bold ph-calculator"></i>Instant quote</p>
+      <h2>See what your clean costs.</h2>
+      <p>Answer three quick questions and the number appears while you type.</p>
+    </div>
+
+    <div class="calc">
+      <div class="calc-card reveal">
+        <div class="steps">
+          <div class="step-dot on" data-dot="1"></div>
+          <div class="step-dot" data-dot="2"></div>
+          <div class="step-dot" data-dot="3"></div>
+        </div>
+
+        <div class="step" data-step="1">
+          <p class="step-label">Step 1 of 3</p>
+          <h3>Tell us about your home</h3>
+          <div class="field">
+            <label><i class="ph-bold ph-broom"></i>What kind of clean?</label>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="type" value="1" checked><span>Regular clean</span></label>
+              <label class="opt"><input type="radio" name="type" value="1.6"><span>Deep / spring clean</span></label>
+              <label class="opt"><input type="radio" name="type" value="2"><span>End of lease</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label><i class="ph-bold ph-bed"></i>Bedrooms</label>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="beds" value="1"><span>1</span></label>
+              <label class="opt"><input type="radio" name="beds" value="2" checked><span>2</span></label>
+              <label class="opt"><input type="radio" name="beds" value="3"><span>3</span></label>
+              <label class="opt"><input type="radio" name="beds" value="4"><span>4</span></label>
+              <label class="opt"><input type="radio" name="beds" value="5"><span>5+</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label><i class="ph-bold ph-shower"></i>Bathrooms</label>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="baths" value="1" checked><span>1</span></label>
+              <label class="opt"><input type="radio" name="baths" value="2"><span>2</span></label>
+              <label class="opt"><input type="radio" name="baths" value="3"><span>3</span></label>
+              <label class="opt"><input type="radio" name="baths" value="4"><span>4+</span></label>
+            </div>
+          </div>
+          <div class="nav-row"><button class="btn" data-go="2">Continue<i class="ph-bold ph-arrow-right"></i></button></div>
+        </div>
+
+        <div class="step hidden" data-step="2">
+          <p class="step-label">Step 2 of 3</p>
+          <h3>Anything extra?</h3>
+          <div class="extras">
+            <label class="extra"><input type="checkbox" data-x="60"><span><i class="ph ph-oven"></i>Inside oven<em>+$60</em></span></label>
+            <label class="extra"><input type="checkbox" data-x="50"><span><i class="ph ph-app-window"></i>Inside windows<em>+$50</em></span></label>
+            <label class="extra"><input type="checkbox" data-x="35"><span><i class="ph ph-thermometer-cold"></i>Inside fridge<em>+$35</em></span></label>
+            <label class="extra"><input type="checkbox" data-x="40"><span><i class="ph ph-park"></i>Balcony / patio<em>+$40</em></span></label>
+            <label class="extra"><input type="checkbox" data-x="90"><span><i class="ph ph-drop"></i>Carpet steam clean<em>+$90</em></span></label>
+            <label class="extra"><input type="checkbox" data-x="30"><span><i class="ph ph-cabinet"></i>Inside cupboards<em>+$30</em></span></label>
+          </div>
+          <div class="nav-row">
+            <button class="btn btn-ghost" data-go="1"><i class="ph-bold ph-arrow-left"></i>Back</button>
+            <button class="btn" data-go="3">Continue<i class="ph-bold ph-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="step hidden" data-step="3">
+          <p class="step-label">Step 3 of 3</p>
+          <h3>How often, and where do we send it?</h3>
+          <div class="field">
+            <label><i class="ph-bold ph-arrows-clockwise"></i>Frequency</label>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="freq" value="0.85"><span>Weekly<em>save 15%</em></span></label>
+              <label class="opt"><input type="radio" name="freq" value="0.9" checked><span>Fortnightly<em>save 10%</em></span></label>
+              <label class="opt"><input type="radio" name="freq" value="0.95"><span>Monthly<em>save 5%</em></span></label>
+              <label class="opt"><input type="radio" name="freq" value="1"><span>One-off</span></label>
+            </div>
+          </div>
+          <div class="inputs">
+            <div class="inp"><input type="text" placeholder="First name" aria-label="First name"><i class="ph ph-user"></i></div>
+            <div class="inp"><input type="tel" placeholder="Mobile" aria-label="Mobile"><i class="ph ph-phone"></i></div>
+            <div class="inp full"><input type="email" placeholder="Email address" aria-label="Email address"><i class="ph ph-envelope-simple"></i></div>
+            <div class="inp full"><input type="text" placeholder="Suburb or postcode" aria-label="Suburb or postcode"><i class="ph ph-map-pin"></i></div>
+          </div>
+          <div class="nav-row">
+            <button class="btn btn-ghost" data-go="2"><i class="ph-bold ph-arrow-left"></i>Back</button>
+            <button class="btn"><i class="ph-bold ph-calendar-check"></i>Book my clean</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card reveal d1">
+        <p class="kicker"><i class="ph-bold ph-tag"></i>Your estimate</p>
+        <p class="price" id="total">$175</p>
+        <p class="price-sub" id="summary">Regular clean · 2 bed, 1 bath · fortnightly</p>
+        <ul class="breakdown" id="lines"></ul>
+        <ul class="incl">
+          <li><i class="ph-fill ph-check-circle"></i>All products and equipment supplied</li>
+          <li><i class="ph-fill ph-check-circle"></i>The same cleaner each visit</li>
+          <li><i class="ph-fill ph-check-circle"></i>No lock-in contract, pause any time</li>
+          <li><i class="ph-fill ph-check-circle"></i>Next available: this Thursday</li>
+        </ul>
+        <div class="guarantee">
+          <i class="ph-fill ph-seal-check"></i>
+          <div><b>100% satisfaction guarantee</b><span>Tell us within 48 hours and we re-clean it free.</span></div>
+        </div>
+        <p class="price-note">Indicative pricing for demonstration. The live booking flow would run through BookingKoala or ServiceM8.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="kicker"><i class="ph-bold ph-sparkle"></i>Services</p>
+      <h2>Three ways we clean.</h2>
+      <p>Same police-checked team, same guarantee, whichever you choose.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <figure><img src="img/kitchen.jpg" alt="Cleaner wiping down a kitchen benchtop" width="1000" height="667" loading="lazy"></figure>
+        <div class="card-body">
+          <h3>Regular cleaning</h3>
+          <p>Weekly, fortnightly or monthly. The same cleaner each visit, so nobody has to be re-taught where things go.</p>
+          <span class="from"><i class="ph-bold ph-tag"></i>From $164</span>
+        </div>
+      </article>
+      <article class="card reveal d1">
+        <figure><img src="img/bathroom.jpg" alt="Cleaner detailing a bathroom basin and tapware" width="1000" height="667" loading="lazy"></figure>
+        <div class="card-body">
+          <h3>Deep &amp; spring clean</h3>
+          <p>Skirtings, tracks, inside appliances and everything a regular clean doesn't reach. Ideal before guests or after renovations.</p>
+          <span class="from"><i class="ph-bold ph-tag"></i>From $262</span>
+        </div>
+      </article>
+      <article class="card reveal d2">
+        <figure><img src="img/products.webp" alt="Cleaning products laid out in a finished room" width="1000" height="667" loading="lazy"></figure>
+        <div class="card-body">
+          <h3>End of lease</h3>
+          <p>Built around what property managers actually inspect, so you get your bond back without a second visit.</p>
+          <span class="from"><i class="ph-bold ph-tag"></i>From $328</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="kicker"><i class="ph-bold ph-path"></i>How it works</p>
+      <h2>From quote to clean, in four steps.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="how-step reveal"><div class="how-icon"><i class="ph-fill ph-calculator"></i></div><h3>Get your price</h3><p>Three questions about your home and the cost appears on screen.</p></div>
+      <div class="how-step reveal d1"><div class="how-icon"><i class="ph-fill ph-calendar-dots"></i></div><h3>Pick your day</h3><p>Choose a time that suits you, and change or pause it whenever you need to.</p></div>
+      <div class="how-step reveal d2"><div class="how-icon"><i class="ph-fill ph-broom"></i></div><h3>We clean</h3><p>A police-checked, insured cleaner arrives with everything needed.</p></div>
+      <div class="how-step reveal d3"><div class="how-icon"><i class="ph-fill ph-thumbs-up"></i></div><h3>You check</h3><p>Not happy with something? Tell us within 48 hours and we re-clean it free.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="kicker"><i class="ph-bold ph-chat-circle-text"></i>Reviews</p>
+      <h2>What Perth homeowners say.</h2>
+      <p>Placeholder reviews. On the live build these pull from your Google profile so they stay current.</p>
+    </div>
+    <div class="reviews">
+      <div class="review reveal">
+        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+        <p>"Same cleaner every fortnight and she knows exactly how we like things. Seeing a price online instead of waiting for a quote is what made me book."</p>
+        <div class="who"><div class="av">SK</div><div><b>Sarah K.</b><span><i class="ph ph-map-pin"></i>Hillarys</span></div></div>
+      </div>
+      <div class="review reveal d1">
+        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+        <p>"Used them for our end of lease clean. The property manager passed it first go and the bond came back in full."</p>
+        <div class="who"><div class="av">MT</div><div><b>Michael T.</b><span><i class="ph ph-map-pin"></i>Joondalup</span></div></div>
+      </div>
+      <div class="review reveal d2">
+        <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+        <p>"Been with Rita for six years now. Reliable, insured, and they have never once let us down."</p>
+        <div class="who"><div class="av">AL</div><div><b>Anna L.</b><span><i class="ph ph-map-pin"></i>Duncraig</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="areas" id="areas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="kicker"><i class="ph-bold ph-map-trifold"></i>Service areas</p>
+      <h2 style="color:#fff">Cleaning Perth's northern suburbs.</h2>
+      <p>Each of these becomes its own page in phase two, which is how competitors rank for "cleaner + suburb" searches.</p>
+    </div>
+    <div class="suburbs reveal d1">
+      <a href="#">Hillarys</a><a href="#">Sorrento</a><a href="#">Duncraig</a><a href="#">Padbury</a>
+      <a href="#">Craigie</a><a href="#">Ocean Reef</a><a href="#">Joondalup</a><a href="#">Mullaloo</a>
+      <a href="#">Kallaroo</a><a href="#">Woodvale</a><a href="#">Currambine</a><a href="#">Beldon</a>
+      <a href="#">Heathridge</a><a href="#">Edgewater</a><a href="#">Greenwood</a>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <h2>Find out what your clean costs.</h2>
+    <p>Around forty-five seconds of questions, and the number is on your screen.</p>
+    <div class="hero-cta">
+      <a class="btn btn-lg" href="#quote"><i class="ph-bold ph-calculator"></i>Get my price</a>
+      <a class="btn btn-lg btn-ghost" href="tel:0433145346"><i class="ph-bold ph-phone"></i>0433 145 346</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-logo"><img src="img/rita-logo.webp" alt=""><span class="f-brand">Rita Cleaning Service</span></div>
+        <p style="margin:0 0 14px">Police-checked, insured house and office cleaning across Perth's northern suburbs since 2007.</p>
+        <p style="margin:0;display:flex;align-items:center;gap:9px"><i class="ph ph-map-pin" style="color:var(--lime)"></i>Hillarys WA 6025</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Regular cleaning</a></li>
+          <li><a href="#services">Deep &amp; spring clean</a></li>
+          <li><a href="#services">End of lease</a></li>
+          <li><a href="#services">Office cleaning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#areas">Service areas</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><i class="ph-fill ph-phone"></i><a class="f-mail" href="tel:0433145346">0433 145 346</a></li>
+          <li><i class="ph-fill ph-envelope-simple"></i><a class="f-mail" href="#">hello@ritacleaningservice.com.au</a></li>
+          <li style="margin-top:14px"><a class="btn btn-white" href="#quote"><i class="ph-bold ph-calculator"></i>Get my price</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© Rita Cleaning Service. Concept mockup, not a live website.</span>
+      <span>Design concept by WebGendy</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var BASE=99, PER_BED=30, PER_BATH=35;
+  var TYPE={'1':'Regular clean','1.6':'Deep / spring clean','2':'End of lease'};
+  var FREQ={'0.85':'weekly','0.9':'fortnightly','0.95':'monthly','1':'one-off'};
+
+  function val(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:null}
+  function money(n){return '$'+Math.round(n).toLocaleString('en-AU')}
+
+  function calc(){
+    var t=parseFloat(val('type')),beds=parseInt(val('beds')),baths=parseInt(val('baths')),f=parseFloat(val('freq'));
+    var core=(BASE+beds*PER_BED+baths*PER_BATH)*t, extras=0, count=0;
+    Array.prototype.forEach.call(document.querySelectorAll('.extra input:checked'),function(c){extras+=parseFloat(c.dataset.x);count++});
+    var sub=core+extras, total=sub*f, saved=sub-total;
+    document.getElementById('total').textContent=money(total);
+    document.getElementById('summary').textContent=TYPE[val('type')]+' · '+beds+' bed, '+baths+' bath · '+FREQ[val('freq')];
+    var l='<li><span>Clean ('+beds+' bed, '+baths+' bath)</span><b>'+money(core)+'</b></li>';
+    if(count) l+='<li><span>Extras ('+count+')</span><b>+'+money(extras)+'</b></li>';
+    if(saved>0.5){var w=FREQ[val('freq')];l+='<li class="save"><span>'+w.charAt(0).toUpperCase()+w.slice(1)+' discount</span><b>-'+money(saved)+'</b></li>'}
+    document.getElementById('lines').innerHTML=l;
+  }
+
+  function go(n){
+    Array.prototype.forEach.call(document.querySelectorAll('.step'),function(s){s.classList.toggle('hidden',s.dataset.step!==n)});
+    Array.prototype.forEach.call(document.querySelectorAll('.step-dot'),function(d){d.classList.toggle('on',parseInt(d.dataset.dot)<=parseInt(n))});
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-go]'),function(b){b.addEventListener('click',function(){go(b.dataset.go)})});
+  Array.prototype.forEach.call(document.querySelectorAll('.calc input'),function(i){i.addEventListener('change',calc)});
+  calc();
+
+  // scroll reveal, with a fail-open fallback so content can never stay invisible
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    document.documentElement.classList.add('no-io');
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)} });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    Array.prototype.forEach.call(els,function(el){io.observe(el)});
+    // safety net: anything still hidden after 2.5s gets shown
+    setTimeout(function(){Array.prototype.forEach.call(els,function(el){el.classList.add('in')})},2500);
+  }
+})();
+</script>
+</body>
+</html>
